@@ -103,9 +103,9 @@ class OrderController extends Controller
 
         \Cart::session(auth()->id())->clear();
 
-        return 'order completed, thank you for your order!';
+        // return 'order completed, thank you for your order!';
 
-        // return redirect()->route('home')->withMessage('Order has been placed');
+        return redirect()->route('home')->withMessage('Order has been placed');
     }
 
     /**

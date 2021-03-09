@@ -30,7 +30,7 @@ Route::get('/cart/update/{id}', [CartController::class, 'update'])->name('cart.u
 Route::get('/checkout', [CartController::class, 'checkOut'])->name('cart.checkout')->middleware('auth');
 
 Route::resource('orders', OrderController::class);
-Route::resource('shops', ShopController::class);
+Route::resource('shops', ShopController::class)->middleware('auth');
 
 Route::get('paypal/checkout/{order}', [PaypalController::class, 'getExpressCheckOut'])->name('paypal.checkout');
 Route::get('paypal/checkout-success/{order}', [PaypalController::class, 'getExpressCheckOutSuccess'])->name('paypal.success');
